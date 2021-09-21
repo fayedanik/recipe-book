@@ -1,0 +1,25 @@
+
+
+
+
+<a style="text-decoration: none;padding:0px;cursor: pointer;" class="card-box" [routerLink]="[index]" routerLinkActive="active">
+    <mat-card>
+        <!-- <mat-card-title>{{ recipe.name }}</mat-card-title> -->
+        <mat-card-content>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="img-container">
+                            <img mat-card-md-image src="{{ recipe.imageName }}" alt="{{ recipe.name }}" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <!-- <h3>{{ recipe.imageName }}</h3> -->
+                        <h3>{{ recipe.name }}</h3>
+                        <p>{{ recipe.description }}</p>
+                    </div>
+                </div>
+            </div> 
+        </mat-card-content>
+    </mat-card>
+</a>

@@ -1,0 +1,46 @@
+
+
+button {
+    margin:2px;
+    float: right;
+}
+
+
+.form-area {
+    margin-top: 15px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.myclass .example-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mat-hint {
+    color:rgb(255, 0, 0)
+}
+
+@media screen and (min-width: 768px) {
+    .myclass {
+        margin-top: 20px;
+    }
+  }
+
+.example-full-width {
+    width: 100%;
+}
+::ng-deep 
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: rgb(199, 233, 195);
+    }
+    
+    .placeholder {
+        color:rgb(169, 169, 192)
+    }
+

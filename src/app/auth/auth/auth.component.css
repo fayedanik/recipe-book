@@ -1,0 +1,65 @@
+
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.formbody{
+    background: rgb(176,88,123);
+    background: radial-gradient(circle, rgba(176,88,123,1) 100%, rgba(230,219,219,1) 100%);
+    padding: 5rem;
+    border-radius: 8px;
+    margin: 30px;
+}
+.formbody h1 {
+    text-align: center;
+    color: honeydew;
+}
+.submitinfo button {
+    margin-top: 3rem;
+    margin-bottom:3rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.footer button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.example-full-width {
+    width: 100%;
+}
+.forgot-password a {
+    text-decoration: none;
+    float: right;
+    color: lavender;
+}
+
+.footer p {
+    text-align: center;
+    color: rgb(206, 206, 212);
+    margin-bottom:3rem;
+}
+input {
+    color: wheat;
+}
+/* 
+@media only screen and (min-width:768px) {
+    .example-full-width {
+        width: 100%;
+    }
+} */
+
+::ng-deep 
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: rgb(250, 250, 250);
+    }
+    
+    .placeholder {
+        color:rgb(236, 236, 238);
+    }

@@ -1,0 +1,48 @@
+
+<!--
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-area">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="itemname" id="" class="form-control" #nameInput>
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" name="itemnumber" id="" class="form-control" #amountInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="submit" (click)='onAdditem()'>Add Item</button>
+                    <button class="btn btn-danger" type="button">Delete</button>
+                    <button class="btn btn-primary" type="button" (click)="onClearitem('delete')">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+-->
+<br>
+<div class="myclass">
+    <div class="container">
+        <div class="col-xs-12">
+            <form class="example-form" (ngSubmit)="onAdditem(f)" #f="ngForm">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label class="placeholder">Ingredient Name</mat-label>
+                    <input matInput type="text" name="ingredientName" ngModel required #ingredientName="ngModel">
+                    <mat-hint *ngIf="!ingredientName.valid && ingredientName.touched">Ingredient Name is required</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label class="placeholder">Ingredient Amount</mat-label>
+                    <input matInput type="number" name="ingredientAmount" ngModel required #ingredientAmount="ngModel" pattern="^[1-9]+[0-9]*$">
+                    <mat-hint *ngIf="ingredientAmount.touched && !ingredientAmount.valid">Ingredient Amount is invalid</mat-hint>
+                </mat-form-field>
+                <button class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="editingmode">Delete</button>
+                <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+                <button class="btn btn-success" type="submit" [disabled]="!f.valid"> {{ !editingmode ? 'Add Item' : 'Update' }}</button>
+            </form>
+        </div>
+    </div>
+</div>

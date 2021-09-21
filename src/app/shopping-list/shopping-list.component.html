@@ -1,0 +1,14 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-shopping-edit></app-shopping-edit>
+            <mat-selection-list color="primary" #ingredient [multiple]="false">
+                <mat-list-option *ngFor="let ingredient of ingredients;let i=index" style="margin: 2px;"  (click)="onEditItem(i)" appBetterHighlight [defaultColor]="'#e3c268'" [hoverColor]="'#dbb64f'">
+                    {{ ingredient.name }} ({{ ingredient.amount }})
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </div>
+</div>
+

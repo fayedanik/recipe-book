@@ -1,0 +1,42 @@
+
+.nav-bar {
+    justify-content: space-between;
+}
+
+.nav-bar a {
+    color: rgb(226, 197, 197);
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    border-bottom: 2px solid rgb(217, 217, 219);
+}
+
+span:nth-child(1){
+    padding-right: 3rem;
+}
+span:nth-child(2) {
+    padding-right: 3rem;
+}
+span:nth-child(3) {
+    padding-right: 3rem;
+}
+
+.active {
+    border-bottom: 2px solid ghostwhite;
+}
+
+.temp button {
+    font-size: 20px;
+    color:rgb(226, 197, 197);
+    padding: 0px;
+}
+
+/* @media only screen and (max-width:768px){
+    .maincomponent {
+        visibility: hidden;
+    }
+} */
+
+
+
