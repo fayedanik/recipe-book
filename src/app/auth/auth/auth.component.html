@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+        <div class="wrapper">
+            <div class="formbody">
+                <div class="alert alert-danger" *ngIf="error">
+                    {{ error }}
+                </div>
+                <h1>Member {{ isloginmode ? 'Login' : 'Sign Up' }}</h1>
+                <form [formGroup]="authform" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label class="placeholder">Email</mat-label>
+                        <input matInput type="email" formControlName="email" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label class="placeholder">Password</mat-label>
+                        <input matInput type="password" formControlName="password" required [type]="hide ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)="hide = !hide" style="cursor: pointer;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </mat-form-field>
+                    <div class="forgot-password" *ngIf="isloginmode">
+                        <a>Forgot Password?</a>
+                    </div>
+                    <div class="submitinfo">
+                        <button mat-raised-button color="accent" class="button" type="submit" [disabled]="!authform.valid">
+                            <app-loading-spinner *ngIf="isloading" style="margin-left: -9px;margin-bottom: 4px;display: block;"></app-loading-spinner>
+                            <div *ngIf="!isloading">{{ isloginmode ? 'Login' : 'Sign Up' }}</div>
+                        </button>
+                    </div>
+                    <div class="footer">
+                        <p *ngIf="isloginmode">Don't have an account?</p>
+                        <button mat-raised-button color="warn" type="button" (click)="onSwitch()" [disabled]="isloading" >{{ isloginmode ? 'Sign Up' : 'Switch to Login' }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

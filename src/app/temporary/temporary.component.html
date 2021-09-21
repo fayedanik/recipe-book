@@ -1,0 +1,63 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup]="signUpForm" (ngSubmit)=onsubmit()>
+                <div formGroupName="userData">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" formControlName="username">
+                        <!-- <span *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched">
+                            <span class="help-block" *ngIf="signUpForm.get('userData.username').errors['required']">Username is required</span>
+                        </span> -->
+                        <!-- <span *ngIf="signUpForm.get('userData.username').touched">
+                            <span class="help-block" *ngIf="signUpForm.get('userData.username').errors['nameIsforbidden']">This username is Invalid!</span>
+                        </span> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" class="form-control" formControlName="email">
+                        <!-- <span class="help-block" *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched">Please enter a valid email</span> -->
+                    </div>
+                </div>
+                <!--
+                <div formArrayName="hobbies">
+                    <h4>Your hobbies</h4>
+                    <button class="btn btn-default" (click)="onAddHobby()">Add Hobby</button>
+                    <div class="form-group" *ngFor="let hobbyControl of getControls();let i = index">
+                        <input type="text" class="form-control" [formControlName]="i">
+                    </div>
+                </div>
+                <div class="radio" *ngFor="let gender of genders">
+                    <label>
+                        <input type="radio" [value]="gender" formControlName="gender">{{ gender }}
+                    </label> 
+                </div>
+                -->
+                <button class="btn btn-success" type="submit" [disabled]="!signUpForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <h1 *ngIf="userdata.length<1 && !isfetching">No data available</h1>
+            <ul class="list-group" *ngIf="userdata.length>0 && !isfetching">
+                <li class="list-group-item" *ngFor="let user of userdata">
+                    <p>{{ user.userName }}</p>
+                    <p>{{ user.userEmail }}</p>
+                </li>
+            </ul>
+            <h2 *ngIf="isfetching && !iserror">Loading...</h2>
+            <div class="alert alert-danger" *ngIf="iserror">
+                <h1>An error occurred!</h1>
+                <p>{{ iserror }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <button class="btn btn-danger" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+</div>

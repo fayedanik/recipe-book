@@ -1,0 +1,68 @@
+
+
+<div style="margin-bottom: 52px;"></div>
+
+<div>
+  <mat-card class="example-card">
+    <mat-card-header style="justify-content: space-between;">
+      <mat-card-title>{{ recipe.name }}</mat-card-title>
+      <mat-card-subtitle style="display: flex;">
+        <div>
+            <p style="font-size: 15px;margin-right: 10px;">Snacks,</p>
+        </div>
+        <div class="rating-star">
+            <mat-icon class="material-icons-outlined" style="color: tomato;">star_rate</mat-icon>
+            <mat-icon class="material-icons-outlined" style="color: tomato;">star_rate</mat-icon>
+            <mat-icon class="material-icons-outlined" style="color: tomato;">star_rate</mat-icon>
+            <mat-icon class="material-icons-outlined" style="color: tomato;">star_rate</mat-icon>
+            <mat-icon class="material-icons-outlined">star_rate</mat-icon>
+        </div>
+        <div>
+            <p style="color:tomato;font-size: 12px;margin-top: 1px;">(10)</p>
+        </div>
+      </mat-card-subtitle>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="background-color: transparent;border: none">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span (click)="onAddShoppingList()">To shopping List</span>
+        </button>
+        <button mat-menu-item >
+          <span (click)="onEditRecipe()">Edit Recipe</span>
+        </button>
+        <button mat-menu-item>
+          <span (click)="onDeleteRecipe()">Delete Recipe</span>
+        </button>
+      </mat-menu>
+    </mat-card-header>
+    <img mat-card-image src="{{ recipe.imageName }}" alt="Photo of a Shiba Inu" style="max-height: 500px;">
+    <mat-card-content>
+      <div>
+          <div style="display:flex;">
+            <mat-icon class="material-icons-outlined" style="margin-top: 6px;">description</mat-icon>
+            <h2 style="margin-left: 3px;">Description</h2>
+          </div>
+          <p style="margin-left: 2px;">
+            {{ recipe.description }}
+          </p>
+      </div>
+      <div style="display: flex;">
+          <mat-icon class="material-icons-outlined" style="margin-top: 6px;">arrow_downward</mat-icon>
+          <h2 style="margin-left: 3px;">Ingredients</h2>
+      </div>
+      
+      <div *ngFor="let ingredient of recipe.ingredient">
+        <a style="cursor: pointer;display: flex;text-decoration: none;color:wheat;">
+            <mat-icon class="material-icons-outlined">add_circle</mat-icon>
+            <p style="font-size: 15px;margin-left: 5px;">{{ ingredient.amount}} ml {{ ingredient.name }}</p>
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<!-- <div class="text-center" *ngIf="preLoading">
+  <mat-spinner></mat-spinner>
+</div> -->

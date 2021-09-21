@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="nav-bar">
+    <div>
+        <!-- <mat-icon class="material-icons">menu</mat-icon> -->
+        <span>Recipe Book</span>
+    </div>
+    
+    <div class="maincomponent">
+        <span *ngIf="isauthenticated"><a routerLink="/recipes" routerLinkActive="active">Recipes</a></span>
+        <span *ngIf="!isauthenticated"><a routerLink="/auth" routerLinkActive="active">Login</a></span>
+        <span><a routerLink="/shopping-list" routerLinkActive="active">Shopping List</a></span>
+        <span class="temp" *ngIf="isauthenticated">
+            <button mat-button [matMenuTriggerFor]="menu">Action<mat-icon class="material-icons-outlined">arrow_drop_down</mat-icon></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onSendData()">Send to DB</button>
+                <button mat-menu-item (click)="onFetchData()">Fetch from DB</button>
+                <button mat-menu-item (click)="onLogOut()">Logout</button>
+            </mat-menu>
+        </span>
+    </div>
+</mat-toolbar>
+
+
+
+
+<!-- <div style="font-size: 30px;">
+    <span>Recipe Book</span>
+</div>
+<div>
+    <span *ngIf="isauthenticated"><a routerLink="/recipes" routerLinkActive="active">Recipes</a></span>
+    <span *ngIf="!isauthenticated"><a routerLink="/auth" routerLinkActive="active">Login</a></span>
+    <span><a routerLink="/shopping-list" routerLinkActive="active">Shopping List</a></span>
+    <span class="temp" *ngIf="isauthenticated">
+        <button mat-button [matMenuTriggerFor]="menu">Action<mat-icon class="material-icons-outlined">arrow_drop_down</mat-icon></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onSendData()">Send to DB</button>
+            <button mat-menu-item (click)="onFetchData()">Fetch from DB</button>
+            <button mat-menu-item (click)="onLogOut()">Logout</button>
+        </mat-menu>
+    </span>
+</div> -->
+

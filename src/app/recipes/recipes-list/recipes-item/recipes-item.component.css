@@ -1,0 +1,46 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Raleway:wght@100;200&display=swap');
+
+
+.mat-card-title {
+    font-size: 2rem;
+}
+
+.mat-card-content  {
+    color: rgba(236, 235, 235, 0.801);
+}
+
+.mat-card {
+    border-radius: 0px;
+    background: #3e3e57;
+    font-family: 'Raleway', sans-serif;
+    border-bottom: 1px solid rgb(202, 201, 198,.2);
+}
+
+.mat-card:hover {
+    background:#545459;
+}
+
+
+.img-container img {
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.img-container img:hover {
+    -webkit-transform: scale(1.3);
+	transform: scale(1.1);
+}
+
+.card-box{
+    width: 100%;
+}
+

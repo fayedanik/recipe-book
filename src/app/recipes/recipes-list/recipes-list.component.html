@@ -1,0 +1,38 @@
+
+
+<div class="row">
+    <div class="col xs-12">
+        <button class="btn btn-success" style="margin:10px 10px 10px 0px" (click)="onNewRecipe()">Add New Recipe</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col xs-12">
+        <div *ngIf="fetchingstate===2 || recipes.length">
+            <div *ngIf="recipes.length">
+                <app-recipes-item *ngFor="let itemEl of recipes; let i = index" [recipe]="itemEl" [index]="i"></app-recipes-item>
+            </div>
+            <div *ngIf="recipes.length===0" class="alert alert-warning beautyfy">
+                No data to display
+            </div>
+            <div>
+            </div>
+        </div>
+        <div *ngIf="fetchingstate===1">
+            <mat-spinner></mat-spinner>
+        </div>
+        <!-- <div *ngIf="fetchingstate===2 || recipes.length">
+            <app-recipes-item *ngFor="let itemEl of recipes; let i = index" [recipe]="itemEl" [index]="i"></app-recipes-item>
+        </div>
+        <div *ngIf="fetchingstate===2 && recipes.length===0; else temp" class="alert alert-warning" role="alert" style="margin-top:20%;text-align: center;">
+            No data to display.
+        </div>
+        <ng-template #temp>
+            <div class="alert alert-warning" role="alert" style="margin-top:20%;text-align: center;">No data to display. Please fetch from database first!</div>
+        </ng-template> -->
+        <!-- <div *ngIf="fetchingstate===2 || recipes.length===0" class="alert alert-warning" role="alert" style="margin-top:20%;text-align: center;">
+            No data to display. Please fetch from database first!
+        </div> -->
+        
+    </div>
+</div>
